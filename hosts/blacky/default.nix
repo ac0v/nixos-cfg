@@ -82,7 +82,7 @@
       grub = {
         enable = true;
         version = 2;
-        device = "/dev/nvme0n1";
+        device = "/dev/disk-by-label/boot";
       };
       systemd-boot.enable = false;
     };
