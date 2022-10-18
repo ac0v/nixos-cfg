@@ -2,7 +2,7 @@
   description = "A grossly incandescent nixos config.";
 
   inputs = {
-    dotfiles.url = "github:spebern/nixos-cfg";
+    dotfiles.url = "github:ac0v/nixos-cfg";
   };
 
   outputs = inputs @ { dotfiles, ... }: {

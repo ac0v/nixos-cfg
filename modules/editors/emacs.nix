@@ -15,7 +15,7 @@ in {
       enable = mkBoolOpt false;
       forgeUrl = mkOpt types.str "https://github.com";
       repoUrl = mkOpt types.str "https://github.com/doomemacs/doomemacs";
-      configRepoUrl = mkOpt types.str "https://github.com/spebern/.doom.d";
+      configRepoUrl = mkOpt types.str "https://github.com/ac0v/.doom.d";
     };
   };
 

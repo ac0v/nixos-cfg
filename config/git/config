@@ -1,14 +1,14 @@
 [user]
-	name = Bernhard Specht
-	email = bernhard@specht.net
+	name = ac0v
+	email = ac0v@sys-network.de
 [core]
 	whitespace = trailing-space
 [init]
 	defaultBranch = main
 [github]
-	user = spebern
+	user = ac0v
 [gitlab]
-	user = spebern
+	user = ac0v
 [push]
 	autoSquash = true
 [push]
