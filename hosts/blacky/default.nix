@@ -82,9 +82,12 @@
       grub = {
         enable = true;
         version = 2;
-        device = "/dev/disk-by-label/boot";
+        efiSupport = true;
+        devices = [ "nodev" ];
+        useOSProber = true;
       };
       systemd-boot.enable = false;
+      efi.canTouchEfiVariables = true;
     };
   };
 }
