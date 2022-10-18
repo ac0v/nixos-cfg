@@ -107,7 +107,7 @@ in {
 
         gaps = {
           smartBorders = "on";
-          outer = 5;
+          outer = 0;
         };
 
         input = {
@@ -129,7 +129,7 @@ in {
         };
 
         colors.focused = {
-          background = "#999999";
+          background = "#000000";
           border = "#999999";
           childBorder = "#999999";
           indicator = "#212121";
@@ -189,14 +189,7 @@ in {
       };
 
       extraConfig = ''
-        set $opacity 0.8
-        default_border pixel 1
-        for_window [class=".*"] opacity 0.95
-        for_window [app_id=".*"] opacity 0.95
-        for_window [app_id="pcmanfm"] opacity 0.95, floating enable
-        for_window [app_id="Alacritty"] opacity $opacity
-        for_window [title="drun"] opacity $opacity
-        for_window [class="Emacs"] opacity $opacity
+        for_window [app_id="pcmanfm"] floating enable
         for_window [app_id="pavucontrol"] floating enable, sticky
         for_window [app_id=".blueman-manager-wrapped"] floating enable
         for_window [title="Picture in picture"] floating enable, move p>

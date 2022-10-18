@@ -25,17 +25,13 @@ in {
         * {
           border: none;
           font-family: FiraCode Nerd Font Mono;
-          font-weight: bold;
+          color: #ffffff;
         }
         window#waybar {
-          background-color: rgba(0,0,0,0.5);
-          background: transparent;
+          background-color: rgba(0,0,0,0.0);
           transition-property: background-color;
-          transition-duration: .5s;
+          transition-duration: .20s;
           border-bottom: none;
-        }
-        window#waybar.hidden {
-          opacity: 0.2;
         }
         #workspace,
         #mode,
@@ -50,7 +46,7 @@ in {
         #disk,
         #battery,
         #tray {
-          color: #999999;
+          color: #ffffff;
           margin: 2px 16px 2px 16px;
           background-clip: padding-box;
         }
@@ -59,10 +55,10 @@ in {
           min-width: 15px;
         }
         #workspaces button:hover {
-          background-color: rgba(0,0,0,0.2);
+          background-color: rgb(0,152,208);
         }
         #workspaces button.focused {
-          color: #ccffff;
+          color: rgb(0,152,208);
         }
         #battery.warning {
           color: #ff5d17;
@@ -83,7 +79,7 @@ in {
         ];
         tray = { spacing = 10; };
         modules-center = [ "clock" ];
-        modules-left = [ "sway/workspaces" "sway/window" "sway/mode" ];
+        modules-left = [ "sway/workspaces" "sway/mode" ];
         #modules-left = [ "wlr/workspaces" ];
         modules-right = [ "cpu" "memory" "disk" "pulseaudio" "battery" "tray" ];
         #modules-right = [ "cpu" "memory" "pulseaudio" "clock" "tray" ];
