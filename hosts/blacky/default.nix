@@ -8,9 +8,10 @@
   ## Modules
   modules = {
     desktop = {
-      i3.enable = true;
+      sway.enable = true;
       apps = {
         rofi.enable = true;
+        waybar.enable = true;
         # godot.enable = true;
       };
       browsers = {
@@ -65,6 +66,7 @@
     services = {
       ssh.enable = true;
       docker.enable = true;
+      blueman.enable = true;
       # onedrive.enable = true;
     };
     theme.active = "alucard";
