@@ -85,6 +85,7 @@
         efiSupport = true;
         devices = [ "nodev" ];
         useOSProber = true;
+        gfxmodeEfi = "1024x768";
       };
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
