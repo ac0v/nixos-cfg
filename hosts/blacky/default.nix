@@ -12,10 +12,10 @@
         enable = true;
         scale = "1.5";
       };
+      i3.enable = true;
       apps = {
         waybar.enable = true;
         bitwarden.enable = true;
-        # godot.enable = true;
         remotedesktopmanager.enable = true;
       };
       com = {
@@ -54,6 +54,8 @@
     dev = {
       node.enable = true;
       rust.enable = true;
+      cc.enable = true;
+      nix.enable = true;
       # python.enable = true;
     };
     editors = {
@@ -79,10 +81,25 @@
       docker.enable = true;
       blueman.enable = true;
       # onedrive.enable = true;
+      mlocate.enable = true;
+    };
+    hardware = {
+      wifi.enable = true;
     };
     theme.active = "alucard";
   };
 
+  services = {
+    xserver = {
+      enable = true;
+      displayManager = {
+        sddm = {
+          enable = true;
+        };
+        defaultSession = "sway";
+      };
+    };
+  };
 
   ## Local config
   programs.ssh.startAgent = true;
