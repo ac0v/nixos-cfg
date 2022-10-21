@@ -8,7 +8,10 @@
   ## Modules
   modules = {
     desktop = {
-      sway.enable = true;
+      sway = {
+        enable = true;
+        scale = "1.5";
+      };
       apps = {
         rofi.enable = true;
         waybar.enable = true;
