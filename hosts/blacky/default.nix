@@ -13,7 +13,6 @@
         scale = "1.5";
       };
       apps = {
-        rofi.enable = true;
         waybar.enable = true;
         bitwarden.enable = true;
         # godot.enable = true;
