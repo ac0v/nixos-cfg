@@ -12,7 +12,16 @@
       apps = {
         rofi.enable = true;
         waybar.enable = true;
+        bitwarden.enable = true;
         # godot.enable = true;
+        remotedesktopmanager.enable = true;
+      };
+      com = {
+        discord.enable = true;
+        slack.enable = true;
+        teams.enable = true;
+        skype.enable = true;
+        mattermost.enable = true;
       };
       browsers = {
         default = "chrome";
@@ -56,7 +65,7 @@
     };
     shell = {
       adl.enable = true;
-      # vaultwarden.enable = true;
+      vaultwarden.enable = true;
       direnv.enable = true;
       git.enable    = true;
       gnupg.enable  = true;
