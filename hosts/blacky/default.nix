@@ -86,7 +86,11 @@
     hardware = {
       wifi.enable = true;
     };
-    theme.active = "alucard";
+    theme = {
+      active = "alucard";
+      browser = "google-chrome-stable";
+      wallpaper = "/home/ac0v/workspace/image/wallpaper.jpg";
+    };
   };
 
   services = {

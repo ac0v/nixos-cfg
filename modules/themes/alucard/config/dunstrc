@@ -2,7 +2,7 @@
 ''
 [global]
 alignment = left
-browser = firefox -new-tab
+browser = ${cfg.browser}
 corner_radius = 2
 dmenu = rofi -dmenu -p dunst:
 follow = none

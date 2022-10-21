@@ -19,6 +19,13 @@ in {
         variable. Themes can also be hot-swapped with 'hey theme $THEME'.
       '';
     };
+    browser = mkOption {
+      type = nullOr str;
+      default = "firefox -new-tab";
+      description = ''
+        Browser command to use.
+      '';
+    };
 
     wallpaper = mkOpt (either path null) null;
 
