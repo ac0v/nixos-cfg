@@ -14,6 +14,7 @@
       i3.enable = true;
       apps = {
         waybar.enable = true;
+        bitwarden.enable = true;
       };
       com = {
         discord.enable = true;
