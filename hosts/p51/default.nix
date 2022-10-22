@@ -81,6 +81,10 @@
         };
         defaultSession = "sway";
       };
+      videoDrivers = [
+        "nouveau"
+        "intel"
+      ];
     };
   };
 
@@ -88,9 +92,6 @@
   services.openssh.startWhenNeeded = true;
 
   networking.networkmanager.enable = true;
-
-  services.xserver.videoDrivers = [ "nouveau" ];
-
   powerManagement.powertop.enable = true;
   services.tlp.enable = true;
 }
