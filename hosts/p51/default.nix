@@ -88,6 +88,8 @@
 
   networking.networkmanager.enable = true;
 
+  services.xserver.videoDrivers = [ "nouveau" ];
+
   powerManagement.powertop.enable = true;
   services.tlp.enable = true;
 }
