@@ -10,8 +10,30 @@
   ];
 
   boot = {
-    initrd.availableKernelModules = [ "nvme" "xhci_pci" ];
-    initrd.kernelModules = [ "dm-snapshot" ];
+    loader = {
+      grub = {
+        enable = true;
+        version = 2;
+        efiSupport = true;
+        devices = [ "nodev" ];
+        useOSProber = true;
+        gfxmodeEfi = "1024x768";
+      };
+      systemd-boot.enable = false;
+      efi.canTouchEfiVariables = true;
+    };
+    initrd = {
+      availableKernelModules = [ "nvme" "xhci_pci" ];
+      kernelModules = [ "dm-snapshot" ];
+      luks.devices = {
+        root = {
+          name = "root";
+          device = "/dev/disk/by-uuid/cc467279-1a3d-4857-ab24-306d985cd6df";
+          preLVM = true;
+          allowDiscards = true;
+        };
+      };
+    };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
     kernelParams = [
@@ -67,15 +89,6 @@
   swapDevices =
     [ { device = "/dev/disk/by-label/swap"; }
     ];
-
-  boot.initrd.luks.devices = [
-    {
-      name = "nixos";
-      device = "/dev/disk/by-label/nixos";
-      preLVM = true;
-      allowDiscards = true;
-    }
-  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

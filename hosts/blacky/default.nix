@@ -1,4 +1,4 @@
-0{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, ... }:
 {
   imports = [
     ../home.nix
@@ -113,19 +113,4 @@
   services.openssh.startWhenNeeded = true;
 
   networking.networkmanager.enable = true;
-
-  boot = {
-    loader = {
-      grub = {
-        enable = true;
-        version = 2;
-        efiSupport = true;
-        devices = [ "nodev" ];
-        useOSProber = true;
-        gfxmodeEfi = "1024x768";
-      };
-      systemd-boot.enable = false;
-      efi.canTouchEfiVariables = true;
-    };
-  };
 }
