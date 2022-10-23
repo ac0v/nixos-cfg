@@ -19,12 +19,12 @@
       #      vulnerabilities. Don't copy this blindly! And especially not for
       #      mission critical or server/headless builds exposed to the world.
       "mitigations=off"
-      "mem_sleep_default=deep"
     ];
 
     # Refuse ICMP echo requests on my desktop/laptop; nobody has any business
     # pinging them, unlike my servers.
     kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = 1;
+    resumeDevice = "/dev/disk/by-label/swap";
   };
 
   # Modules
@@ -44,8 +44,6 @@
   # Without this wpa_supplicant may fail to auto-discover wireless interfaces at
   # startup (and must be restarted).
 #  networking.wireless.interfaces = [ "wlan0" ];
-
-  services.logind.lidSwitch = "ignore";
 
   # Power management
   environment.systemPackages = [ pkgs.acpi ];

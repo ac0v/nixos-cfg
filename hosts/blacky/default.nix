@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+0{ pkgs, config, lib, ... }:
 {
   imports = [
     ../home.nix
@@ -82,6 +82,7 @@
       blueman.enable = true;
       # onedrive.enable = true;
       mlocate.enable = true;
+      greetd.enable = true;
     };
     hardware = {
       wifi.enable = true;
@@ -89,18 +90,20 @@
     theme = {
       active = "alucard";
       browser = "google-chrome-stable";
-      wallpaper = "/home/ac0v/workspace/image/wallpaper.jpg";
     };
   };
 
   services = {
-    xserver = {
+    logind = {
+      lidSwitch = "suspend";
+      lidSwitchDocked = "ignore";
+      lidSwitchExternalPower = "ignore";
+    };
+    tlp = {
       enable = true;
-      displayManager = {
-        sddm = {
-          enable = true;
-        };
-        defaultSession = "sway";
+      settings = {
+        WIFI_PWR_ON_AC = "off";
+        WIFI_PWR_ON_BAT = "off";
       };
     };
   };
