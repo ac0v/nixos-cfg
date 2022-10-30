@@ -46,9 +46,9 @@ in {
         alsa.enable = true;
         pulse.enable = true;
       };
-      # dbus = {
-      #   enable = true;
-      # };
+      dbus = {
+        enable = true;
+      };
     };
 
     programs.sway = {
@@ -140,6 +140,11 @@ in {
           "${modifier}+Shift+k" = "move up";
           "${modifier}+Shift+j" = "move down";
 
+          "${modifier}+Shift+left" = "move left";
+          "${modifier}+Shift+right" = "move right";
+          "${modifier}+Shift+up" = "move up";
+          "${modifier}+Shift+down" = "move down";
+
           "${modifier}+1" = "workspace number 1";
           "${modifier}+2" = "workspace number 2";
           "${modifier}+3" = "workspace number 3";
@@ -176,6 +181,9 @@ in {
 
           "${modifier}+b" = "splith";
           "${modifier}+v" = "splitv";
+
+          "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
+          "${modifier}+p" = "exec ${pkgs.flameshot}/bin/flameshot gui";
         };
       };
 
@@ -184,6 +192,7 @@ in {
         for_window [app_id="pavucontrol"] floating enable, sticky
         for_window [app_id=".blueman-manager-wrapped"] floating enable
         for_window [title="Picture in picture"] floating enable, move p>
+#        for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
       '';
 
       extraSessionCommands = ''
@@ -191,6 +200,14 @@ in {
       export XDG_SESSION_TYPE=wayland
       export XDG_SESSION_DESKTOP=sway
       export XDG_CURRENT_DESKTOP=sway
+
+export SDL_VIDEODRIVER=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
+export QT_QPA_PLATFORM=wayland
+
+      #export GDK_SCALE=2
+      #export GDK_DPI_SCALE=0.5
+      #export QT_AUTO_SCREEN_SCALE_FACTOR=1
       '';
     };
   };
