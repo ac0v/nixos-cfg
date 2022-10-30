@@ -24,6 +24,7 @@
         teams.enable = true;
         skype.enable = true;
         mattermost.enable = true;
+        evolution.enable = true;
       };
       browsers = {
         default = "chrome";
@@ -49,6 +50,8 @@
       };
       vm = {
         qemu.enable = true;
+        virtualbox.enable = true;
+        virt-manager.enable = true;
       };
     };
     dev = {
@@ -56,6 +59,7 @@
       rust.enable = true;
       cc.enable = true;
       nix.enable = true;
+      jdk.enable = true;
       # python.enable = true;
     };
     editors = {
@@ -66,6 +70,8 @@
       };
       nano.enable = true;
       vim.enable = true;
+      idea-ultimate.enable = true;
+      clion.enable = true;
     };
     shell = {
       adl.enable = true;
@@ -83,9 +89,11 @@
       # onedrive.enable = true;
       mlocate.enable = true;
       greetd.enable = true;
+      gnome-keyring.enable = true;
     };
     hardware = {
       wifi.enable = true;
+      bluetooth.enable = true;
     };
     theme = {
       active = "alucard";
@@ -94,6 +102,7 @@
   };
 
   services = {
+#    gnome-keyring.enable = true;
     logind = {
       lidSwitch = "suspend";
       lidSwitchDocked = "ignore";
