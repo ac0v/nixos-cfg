@@ -27,8 +27,8 @@
         evolution.enable = true;
       };
       browsers = {
-        default = "chrome";
-        chrome.enable = true;
+        default = "google-chrome";
+        google-chrome.enable = true;
         firefox.enable = true;
       };
       gaming = {
@@ -90,10 +90,12 @@
       mlocate.enable = true;
       greetd.enable = true;
       gnome-keyring.enable = true;
+#      flameshot.enable = true;
     };
     hardware = {
       wifi.enable = true;
       bluetooth.enable = true;
+      hidpi.enable = true;
     };
     theme = {
       active = "alucard";
@@ -118,7 +120,7 @@
   };
 
   ## Local config
-  programs.ssh.startAgent = true;
+  #programs.ssh.startAgent = true;
   services.openssh.startWhenNeeded = true;
 
   networking.networkmanager.enable = true;
