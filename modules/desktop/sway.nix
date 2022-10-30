@@ -173,6 +173,9 @@ in {
           "${modifier}+s" = "layout stacking";
           "${modifier}+w" = "layout tabbed";
           "${modifier}+e" = "layout toggle split";
+
+          "${modifier}+b" = "splith";
+          "${modifier}+v" = "splitv";
         };
       };
 
