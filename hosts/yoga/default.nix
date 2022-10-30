@@ -103,7 +103,6 @@
     openssh.startWhenNeeded = true;
   };
 
-  programs.ssh.startAgent = true;
   networking.networkmanager.enable = true;
   powerManagement.powertop.enable = true;
 }
