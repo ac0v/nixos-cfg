@@ -86,6 +86,7 @@
       blueman.enable = true;
       mlocate.enable = true;
       gnome-keyring.enable = true;
+      flatpak.enable = true;
     };
     hardware = {
       wifi.enable = true;
@@ -120,6 +121,4 @@
       defaultSession = "sway";
     };
   };
-
-  services.flatpak.enable = true;
 }
