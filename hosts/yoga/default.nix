@@ -94,6 +94,7 @@
         enable = true;
         ntfs.enable = true;
       };
+      bluetooth.enable = true;
     };
     theme.active = "alucard";
   };
