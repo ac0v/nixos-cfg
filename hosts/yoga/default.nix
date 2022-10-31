@@ -64,6 +64,7 @@
       nix.enable = true;
       go.enable = true;
       python.enable = true;
+      latex.enable = true;
     };
     editors = {
       default = "nvim";
