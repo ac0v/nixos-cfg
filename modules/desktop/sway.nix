@@ -38,6 +38,7 @@ in {
         pulseSupport = true;
         nlSupport = true;
       })
+      swayr
     ];
 
     services = {
@@ -78,21 +79,28 @@ in {
         menu = "${pkgs.wofi}/bin/wofi --show drun -i";
 
         startup = [
-          {command = "${pkgs.autotiling}/bin/autotiling"; always = true;}
-          {command = "systemctl --user restart waybar"; always = true; }
-          {command = ''
-             ${pkgs.swayidle}/bin/swayidle -w \
-              before-sleep '${pkgs.swaylock}/bin/swaylock'
-            ''; always = true;}
-          {command = ''
-            ${pkgs.swayidle}/bin/swayidle \
-              timeout 240 '${pkgs.swaylock}/bin/swaylock' \
-              timeout 480 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-              before-sleep '${pkgs.swaylock}/bin/swaylock'
-            ''; always = true;}                            # Auto lock\
-          {command = "${pkgs.blueman}/bin/blueman-applet"; always = true;}
-          {command = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator"; always = true;}
+          { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
+          { command = "systemctl --user restart waybar"; always = true; }
+          {
+            command = ''
+              ${pkgs.swayidle}/bin/swayidle -w \
+               before-sleep '${pkgs.swaylock}/bin/swaylock'
+            '';
+            always = true;
+          }
+          {
+            command = ''
+              ${pkgs.swayidle}/bin/swayidle \
+                timeout 240 '${pkgs.swaylock}/bin/swaylock' \
+                timeout 480 'swaymsg "output * dpms off"' \
+                resume 'swaymsg "output * dpms on"' \
+                before-sleep '${pkgs.swaylock}/bin/swaylock'
+            '';
+            always = true;
+          } # Auto lock\
+          { command = "${pkgs.blueman}/bin/blueman-applet"; always = true; }
+          { command = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator"; always = true; }
+          { command = "${pkgs.swayr}/bin/swayrd"; always = true; }
         ];
 
         bars = [];
@@ -197,6 +205,10 @@ in {
 
           "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui";
           "${modifier}+p" = "exec ${pkgs.flameshot}/bin/flameshot gui";
+          "${modifier}+Space" = "exec ${pkgs.swayr}/bin/swayr switch-window";
+          "${modifier}+Tab" = "exec ${pkgs.swayr}/bin/swayr switch-to-urgent-or-lru-window";
+          "${modifier}+Next" = "exec ${pkgs.swayr}/bin/swayr next-window";
+          "${modifier}+Prior" = "exec ${pkgs.swayr}/bin/swayr prev-window";
         };
       };
 
