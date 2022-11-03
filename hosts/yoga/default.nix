@@ -32,6 +32,8 @@
       apps = {
         waybar.enable = true;
         bitwarden.enable = true;
+        flameshot.enable = true;
+        zotero.enable = true;
       };
       com = {
         discord.enable = true;
