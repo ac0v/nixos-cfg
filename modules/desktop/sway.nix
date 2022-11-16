@@ -93,6 +93,10 @@ in {
       wayland.windowManager.sway = {
         enable = true;
         systemdIntegration = true;
+        xwayland = true;
+        wrapperFeatures = {
+          gtk = true;
+        };
         config = rec {
           modifier = "Mod4";
           terminal = "${pkgs.alacritty}/bin/alacritty";
@@ -124,6 +128,9 @@ in {
             smartBorders = "on";
             outer = 0;
           };
+
+          workspaceAutoBackAndForth = true;
+          window.hideEdgeBorders = "smart";
 
           input = {
             "type:touchpad" = {
