@@ -39,6 +39,7 @@ in {
         nlSupport = true;
       })
       swayr
+      wdisplays
     ];
 
     services = {
