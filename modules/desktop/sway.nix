@@ -98,7 +98,6 @@ in {
                 {
                   criteria = "eDP-1";
                   mode = "2880x1800@90.000Hz";
-                  position = "2560,0";
                   scale = 1.5;
                 }
               ];
