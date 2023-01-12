@@ -104,28 +104,6 @@ in {
           terminal = "${pkgs.alacritty}/bin/alacritty";
           menu = "${pkgs.wofi}/bin/wofi --show drun -i";
 
-      extraConfig = ''
-        for_window [app_id="pcmanfm"] floating enable
-        for_window [app_id="pavucontrol"] floating enable, sticky
-        for_window [app_id=".blueman-manager-wrapped"] floating enable
-        for_window [title="Picture in picture"] floating enable, move p>
-#        for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
-      '';
-
-      extraSessionCommands = ''
-      #export WLR_NO_HARDWARE_CURSORS="1";  # Needed for cursor in vm
-      export XDG_SESSION_TYPE=wayland
-      export XDG_SESSION_DESKTOP=sway
-      export XDG_CURRENT_DESKTOP=sway
-
-export SDL_VIDEODRIVER=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
-export QT_QPA_PLATFORM=wayland
-
-      #export GDK_SCALE=2
-      #export GDK_DPI_SCALE=0.5
-      #export QT_AUTO_SCREEN_SCALE_FACTOR=1
-      '';
           startup = [
             { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
             { command = "systemctl --user restart waybar"; always = true; }
