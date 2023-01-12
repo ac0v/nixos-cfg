@@ -61,6 +61,8 @@ with lib.my;
     };
   };
 
+  environment.enableDebugInfo = true;
+
   # Just the bear necessities...
   environment.systemPackages = with pkgs; [
     bind
