@@ -10,8 +10,7 @@ in {
 
   config = mkIf cfg.enable {
     user.packages = with pkgs; [
-      glib-networking
-      remmina
+      my.remmina
     ];
   };
 }
