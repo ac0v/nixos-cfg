@@ -16,6 +16,7 @@
       apps = {
         waybar.enable = true;
         bitwarden.enable = true;
+        remmina.enable = true;
         remotedesktopmanager.enable = true;
       };
       com = {
@@ -39,7 +40,7 @@
       media = {
         daw.enable = true;
         documents.enable = true;
-        graphics.enable = true;
+#        graphics.enable = true;
         mpv.enable = true;
         recording.enable = true;
         spotify.enable = true;
@@ -60,7 +61,7 @@
       cc.enable = true;
       nix.enable = true;
       jdk.enable = true;
-      # python.enable = true;
+      python.enable = false;
     };
     editors = {
       default = "nano";
@@ -124,4 +125,5 @@
   services.openssh.startWhenNeeded = true;
 
   networking.networkmanager.enable = true;
+  networking.domain = "local";
 }
