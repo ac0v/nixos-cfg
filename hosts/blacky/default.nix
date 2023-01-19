@@ -125,5 +125,6 @@
   services.openssh.startWhenNeeded = true;
 
   networking.networkmanager.enable = true;
+  user.extraGroups = [ "networkmanager" ];
   networking.domain = "local";
 }
