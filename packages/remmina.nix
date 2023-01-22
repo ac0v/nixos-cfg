@@ -11,7 +11,6 @@
 , withLibsecret ? true
 , withVte ? true
 }:
-
 stdenv.mkDerivation rec {
   pname = "remmina";
   version = "1.4.29";
@@ -26,6 +25,22 @@ stdenv.mkDerivation rec {
     rev    = "v${version}";
     sha256 = "098f33v5qq6p7zjynj1pdllpmbxvqhfvwgvl9fjqyqfflsp7s7gh";
   };
+#  src = fetchFromGitLab {
+#    owner  = "ac0v";
+#    repo   = "Remmina";
+#    rev    = "feature-improve-www-plugin";
+#    sha256 = "sha256-wxT8vr3f8SSdLxCI9WiTwFu9NTtL3aMLuMmBmWJz+gQ=";
+#  };
+#  src = fetchgit {
+#    url = "file:///home/ac0v/workspace/Remmina/";
+#    rev = "efcdcacae8fe0d9d9688359a111e843c7c4bf14e";
+#  };
+#  src = "/home/ac0v/workspace/Remmina/";
+#  unpackPhase = ''
+#    ls -lisa /build/
+#    local tgt=$(echo $src | cut --delimiter=- --fields=2-)
+#    cp $src $tgt
+#  '';
 
   nativeBuildInputs = [ cmake ninja pkg-config wrapGAppsHook ];
   buildInputs = [
@@ -49,10 +64,16 @@ stdenv.mkDerivation rec {
     "-DWITH_AVAHI=OFF"
     "-DWITH_KF5WALLET=${if withKf5Wallet then "ON" else "OFF"}"
     "-DWITH_LIBSECRET=${if withLibsecret then "ON" else "OFF"}"
+#    "-DWITH_CUPS=ON"
+#    "-DWITH_FREERDP_MASTER=ON"
+#    "-DWITH_LIBSSH=ON"
+#    "-DWITH_NEWS=ON"
+#    "-DWITH_EXAMPLES=ON"
     "-DFREERDP_LIBRARY=${freerdp}/lib/libfreerdp2.so"
     "-DFREERDP_CLIENT_LIBRARY=${freerdp}/lib/libfreerdp-client2.so"
     "-DFREERDP_WINPR_LIBRARY=${freerdp}/lib/libwinpr2.so"
     "-DWINPR_INCLUDE_DIR=${freerdp}/include/winpr2"
+    "-DFREERDP_INCLUDE_DIR=${freerdp}/include/freerdp2"
     "-DCMAKE_BUILD_TYPE=Debug"
   ];
 

@@ -28,7 +28,7 @@ in {
     ];
 
     services = {
-      picom.enable = true;
+#      picom.enable = true;
       redshift.enable = true;
       xserver.windowManager.i3.enable = true;
     };
